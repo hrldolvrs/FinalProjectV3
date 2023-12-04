@@ -10,7 +10,7 @@
     android:background="@drawable/bgtest02">
 
     <TextView
-        android:id="@+id/signuptxtStudAP"
+        android:id="@+id/signuptxtAP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Approval Pal"
@@ -22,7 +22,7 @@
         tools:layout_editor_absoluteY="231dp"/>
 
     <TextView
-        android:id="@+id/signuptxtStudSEAM"
+        android:id="@+id/signuptxtSEAM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Seamless Abscence Requests:"
@@ -32,7 +32,7 @@
         tools:layout_editor_absoluteX="104dp"
         tools:layout_editor_absoluteY="231dp"/>
     <TextView
-        android:id="@+id/signuptxtStudWHERE"
+        android:id="@+id/signuptxtWHERE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Where Permission Meets Precision!"
@@ -69,19 +69,20 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:id="@+id/signupStudEmail"
+                android:layout_height="50dp"
+                android:id="@+id/signupSchoolEmail"
                 android:background="@drawable/borderblack"
                 android:drawablePadding="8dp"
                 android:hint="School Email"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 android:layout_marginTop="5dp"/>
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:id="@+id/signupPhoneNum"
                 android:background="@drawable/borderblack"
                 android:drawablePadding="8dp"
@@ -93,7 +94,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:id="@+id/signupFirstName"
                 android:background="@drawable/borderblack"
                 android:drawablePadding="8dp"
@@ -105,7 +106,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:id="@+id/signupLastName"
                 android:background="@drawable/borderblack"
                 android:drawablePadding="8dp"
@@ -117,7 +118,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:id="@+id/signupID"
                 android:background="@drawable/borderblack"
                 android:drawablePadding="8dp"
@@ -129,7 +130,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:id="@+id/signupPWD"
                 android:background="@drawable/borderblack"
                 android:drawablePadding="8dp"
@@ -141,7 +142,7 @@
 
             <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/borderblack"
                 android:drawablePadding="8dp"
@@ -150,8 +151,8 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:id="@+id/signupBttnStud"
+                android:layout_height="50dp"
+                android:id="@+id/signupBttn"
                 android:text="SIGN UP"
                 android:textSize="18sp"
                 android:layout_marginTop="10dp"
