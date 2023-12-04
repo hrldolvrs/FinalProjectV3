@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bgtest02">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ustlogo"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="35dp" />
+    <TextView
+        android:id="@+id/logintxtStudAP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Approval Pal"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="231dp"/>
+
+    <TextView
+        android:id="@+id/logintxtStudSEAM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seamless Abscence Requests:"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="231dp"/>
+    <TextView
+        android:id="@+id/logintxtStudWHERE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Where Permission Meets Precision!"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="231dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:id="@+id/loginText"
+                android:textSize="36sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/logintxtWT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome Thomasians!"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/loginUNE"
+                android:background="@drawable/borderblack"
+                android:drawablePadding="8dp"
+                android:hint="ID or Email"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/loginPWD"
+                android:background="@drawable/borderblack"
+                android:drawablePadding="8dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/loginBttn"
+                android:text="LOGIN"
+                android:textSize="18sp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="#00A1E4"
+                android:background="@drawable/rounded_corners"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Not yet registered? Sign up Now"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:id="@+id/signupText"
+        android:textColor="@color/white"
+        android:layout_marginBottom="20dp"/>
+
+
+</LinearLayout>
