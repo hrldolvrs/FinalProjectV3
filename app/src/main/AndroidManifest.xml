@@ -20,12 +20,14 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MainActivity"/>
         <activity
             android:name=".MainInstructorActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MainActivity"/>
+        <activity
+            android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.MainActivity">
             <intent-filter>

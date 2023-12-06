@@ -110,14 +110,17 @@
                 android:layout_marginTop="20dp"/>
 
             <Button
+                android:id="@+id/loginBttn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/loginBttn"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_corners"
+                android:backgroundTint="#00A1E4"
                 android:text="LOGIN"
                 android:textSize="18sp"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="#00A1E4"
-                android:background="@drawable/rounded_corners"/>
+                android:clickable="true"
+
+                />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

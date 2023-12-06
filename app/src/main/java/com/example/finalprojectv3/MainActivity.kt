@@ -1,5 +1,7 @@
 package com.example.finalprojectv3
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var drawerLayout: DrawerLayout
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,6 +34,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.fragment_container, HomeStudentFragment()).commit()
             navigationView.setCheckedItem(R.id.nav_home_student)
         }
+
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -42,7 +46,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.fragment_container, CoursesStudentFragment()).commit()
             R.id.nav_requests_student -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, RequestsStudentFragment()).commit()
-            R.id.nav_logout_student -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
+            R.id.nav_logout_student -> { Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+
+            }
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
