@@ -28,7 +28,6 @@ class SignupActivity : AppCompatActivity() {
         var StudentID : EditText = findViewById(R.id.signupID)
         var StudentPassword : EditText = findViewById(R.id.signupPWD)
         var roleSpinner : Spinner = findViewById(R.id.roleSpinner)
-
         //Button Variable
         var btnSignup : View = findViewById(R.id.signupBttn)
 
