@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +23,9 @@ class ProfileStudentFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var databaseReference: DatabaseReference
+    private lateinit var auth : FirebaseAuth
+    private lateinit var studentId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,12 +33,22 @@ class ProfileStudentFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+
+        auth = FirebaseAuth.getInstance()
+
+        val studentId = auth.currentUser?.uid.toString()
+        val studentEmail = auth.currentUser?.email.toString()
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        //val view = inflater!!.inflate(R.layout.fragment_profile_student, container, false)
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile_student, container, false)
     }

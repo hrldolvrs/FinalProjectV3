@@ -21,7 +21,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtName"
+            android:id="@+id/txtSName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Amado M. Sapit "
@@ -45,7 +45,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/txtEmail"
+        android:id="@+id/txtPEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

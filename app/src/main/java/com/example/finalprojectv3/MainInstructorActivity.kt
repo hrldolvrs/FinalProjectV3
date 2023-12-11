@@ -2,9 +2,7 @@ package com.example.finalprojectv3
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -12,14 +10,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.finalprojectv3.databinding.ActivityMainInstructorBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.Firebase
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.firestore
-import org.w3c.dom.EntityReference
-import org.w3c.dom.Text
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.database
 
 class MainInstructorActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -27,7 +24,7 @@ class MainInstructorActivity : AppCompatActivity(), NavigationView.OnNavigationI
     //private lateinit var binding: ActivityMainInstructorBinding
     //private lateinit var databaseReference: DatabaseReference
     //private lateinit var binding: ActivityMainInstructorBinding
-
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +36,9 @@ class MainInstructorActivity : AppCompatActivity(), NavigationView.OnNavigationI
 
 
         //Fire Database Declaration
-        val db = Firebase.firestore
-        val instructors = db.collection("Instructors")
+        database = Firebase.database.reference
+        //val db = Firebase.firestore
+        //val instructors = db.collection("Instructors")
 
 
 
@@ -51,11 +49,12 @@ class MainInstructorActivity : AppCompatActivity(), NavigationView.OnNavigationI
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         val header = navigationView?.getHeaderView(0)
 
-        val textFullname = header?.findViewById<TextView>(R.id.txtName)
-        val textEmail = header?.findViewById<TextView>(R.id.txtEmail)
+        val textFullname = header?.findViewById<TextView>(R.id.txtSName)
+        val textEmail = header?.findViewById<TextView>(R.id.txtPEmail)
 
         if (textFullname != null && textEmail != null) {
-            //set text na here
+
+            
 
         }
 
@@ -117,6 +116,24 @@ class MainInstructorActivity : AppCompatActivity(), NavigationView.OnNavigationI
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             onBackPressedDispatcher.onBackPressed()
+        }
+    }
+
+    fun writeUsername(first: String, last: String){
+
+        database.child("first").setValue(first)
+        database.child("last").setValue(last)
+
+    }
+
+    val postListener = object : ValueEventListener{
+        override fun onDataChange(snapshot: DataSnapshot) {
+            val post = snapshot.getValue()
+            Log.d("TAG", post.toString())
+        }
+
+        override fun onCancelled(error: DatabaseError) {
+            Log.w("TAG", "loadPost:onCancelled", error.toException())
         }
     }
 

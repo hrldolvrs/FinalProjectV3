@@ -8,21 +8,23 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
+    //val store = Firebase.firestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        auth = FirebaseAuth.getInstance()
         //firebase
-        val db = Firebase.firestore
-        val instructors = db.collection("Instructors")
-        val students = db.collection("Students")
-
-        var instructorLoggedIn = false
-        var studentLoggedIn = false
+        //val db = Firebase.firestore
+        //val instructors = db.collection("Instructors")
+        //val students = db.collection("Students")
 
         //make a variable for username and password
         var txtUsername: EditText = findViewById(R.id.loginUNE)
@@ -34,6 +36,9 @@ class LoginActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
             try {
+                /**var instructorLoggedIn = false
+                var studentLoggedIn = false
+
                 //Instructor Validation email
                 instructors.whereEqualTo("email", txtUsername.text.toString())
                     .whereEqualTo("password", txtPassword.text.toString())
@@ -49,16 +54,21 @@ class LoginActivity : AppCompatActivity() {
                         if (result != null) {
                             instructorLoggedIn = true
                         }
+
+                        else{
+                            instructorLoggedIn = false
+                        }
                     }
 
                 //Student Validation email
-                students.whereEqualTo("studentEmail", txtUsername.text.toString())
+                /**students.whereEqualTo("studentEmail", txtUsername.text.toString())
                     .whereEqualTo("password", txtPassword.text.toString())
                     .get().addOnSuccessListener { result ->
                         if (result != null) {
                             studentLoggedIn = true
                         }
                     }
+                **/
                 //Student Validation ID
                 students.whereEqualTo("studentId", txtUsername.text.toString())
                     .whereEqualTo("password", txtPassword.text.toString())
@@ -66,7 +76,12 @@ class LoginActivity : AppCompatActivity() {
                         if (result != null) {
                             studentLoggedIn = true
                         }
+                        else{
+                            studentLoggedIn = false
+                        }
                     }
+
+                //if the instructor is logged in, go to the instructor main activity
 
                 if (instructorLoggedIn == true) {
                     Toast.makeText(this, "Logged in Successfully", Toast.LENGTH_SHORT).show()
@@ -79,7 +94,32 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent2)
                 } else {
                     Toast.makeText(this, "Username or Password is incorrect", Toast.LENGTH_SHORT).show();
+                    return@setOnClickListener
                 }
+                **/
+                /**auth.signInWithEmailAndPassword(txtUsername.text.toString(), txtPassword.text.toString())
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            Toast.makeText(this, "Logged in Successfully", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, MainInstructorActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(this, "Username or Password is incorrect", Toast.LENGTH_SHORT).show();
+                        }
+                    }**/
+                auth.signInWithEmailAndPassword(txtUsername.text.toString(), txtPassword.text.toString())
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            Toast.makeText(this, "Logged in Successfully", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                            //checkUserAccessLevel(it.result?.user?.uid)
+
+                        } else {
+                            Toast.makeText(this, "Username or Password is incorrect", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
             } catch (e: Exception) {
                 Toast.makeText(this, "Username or Password is incorrect", Toast.LENGTH_SHORT)
                     .show();
@@ -91,4 +131,10 @@ class LoginActivity : AppCompatActivity() {
             }
 
     }
+
+    /**private fun checkUserAccessLevel(uid: String?) {
+
+        df = store.collection("Students").document(uid)
+
+    }**/
 }

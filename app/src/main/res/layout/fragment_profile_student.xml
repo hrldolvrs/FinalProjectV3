@@ -88,13 +88,14 @@
                         android:drawableEnd="@drawable/lock"/>
 
                     <TextView
+                        android:id="@+id/txtID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="left"
-                        android:textStyle="bold"
+                        android:text="2021153290"
                         android:textColor="@color/black"
                         android:textSize="18dp"
-                        android:text="2021153290"/>
+                        android:textStyle="bold" />
 
                     <View
                         android:layout_width="match_parent"
@@ -205,11 +206,12 @@
                     android:drawableEnd="@drawable/edit_func"/>
 
                 <TextView
+                    android:id="@+id/txtPName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="John Ryan Herald Dy"
                     android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:text="John Ryan Herald Dy"/>
+                    android:textSize="18dp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -235,11 +237,12 @@
                     android:drawableEnd="@drawable/edit_func"/>
 
                 <TextView
+                    android:id="@+id/txtPEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="john.ryan.herald.dy.cics@ust.edu.ph"
                     android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:text="john.ryan.herald.dy.cics@ust.edu.ph"/>
+                    android:textSize="18dp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -265,11 +268,12 @@
                     android:drawableEnd="@drawable/edit_func"/>
 
                 <TextView
+                    android:id="@+id/txtPNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="09183606288"
                     android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:text="09183606288"/>
+                    android:textSize="18dp" />
 
                 <View
                     android:layout_width="match_parent"

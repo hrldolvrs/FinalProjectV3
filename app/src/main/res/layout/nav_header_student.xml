@@ -21,11 +21,12 @@
         android:layout_gravity="center_horizontal">
 
         <TextView
+            android:id="@+id/txtSName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kagawad Paolo Tan "
             android:textColor="@color/white"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,11 +45,12 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/txtSEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="oppapaolo_sensei@gmail.com"
         android:textColor="@color/white"
-        android:textSize="14sp"
-        android:layout_marginBottom="16dp"/>
+        android:textSize="14sp" />
 
 </LinearLayout>
